@@ -1,1 +1,13 @@
 <h1>Hello world</h1>
+
+<div id="data" style="border: 1px solid black; display: inline-block; padding: 5px;"></div>
+
+<script>
+    fetch('http://localhost:8000/test.txt')
+        .then( (res) => {
+            return res.text();
+        })
+        .then( (text) => {
+            document.querySelector('#data').innerHTML = text;
+        });
+</script>
